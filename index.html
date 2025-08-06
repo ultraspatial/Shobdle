@@ -11,26 +11,52 @@
 <body>
     <nav>
         <h1>শব্দLE</h1>
-        <button><span class="material-symbols-outlined">info</span></button>
+        <button id="nav-button">
+            <span class="material-symbols-outlined">info</span>
+        </button>
     </nav>
     <main>
-        <div class="grid">
-            <div>
-                <div></div><div></div>
-            </div>
-            <div>
-                <div></div><div></div>
-            </div>
-            <div>
-                <div></div><div></div>
-            </div>
-            <div>
-                <div></div><div></div>
-            </div>
-            <div>
-                <div></div><div></div>
+        <div id="popup-container" class="popup-container">
+            <div id="popup-content" class="popup-content">
+                    <h2>Welcome to শব্দLE - The Bangla Wordle!</h2>
+                    <h3>How To Play</h3>
+                <p>Guess the 4 letter word in 5 attempts. After each guess, the color of the tiles will change to show how close your guess was to the word.</p>
+                <button id="close-button">Close</button>
             </div>
         </div>
+
+        <div class="grid">
+            <div class="row">
+                <div class="cell" id="1x1">
+                    <span id="1x1"></span>
+                </div>
+                <div class="cell" id="1x2">
+                    <span id="1x2"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell" id="2x1"></div>
+                <div class="cell" id="2x2"></div>
+            </div>
+            <div class="row">
+                <div class="cell" id="3x1">
+                </div>
+                <div class="cell" id="3x2"></div>
+            </div>
+            <div class="row">
+                <div class="cell" id="4x1"></div>
+                <div class="cell" id="4x2"></div>
+            </div>
+            <div class="row">
+                <div class="cell" id="5x1"></div>
+                <div class="cell" id="5x2"></div>
+            </div>
+        </div>
+        <div class="input">
+            <input type="text" id="word" placeholder="শব্দ লিখুন" onkeypress="clickPress(event)" focus>
+        </div>
+        <script src="/source/main.js"></script>
     </main>
+    <script src="/source/popup.js"></script>
 </body>
 </html>
