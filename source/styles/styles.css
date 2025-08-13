@@ -1,8 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif+Bengali:wght@100..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
 
-:root {
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --fg-color: #fff;
+        --nav-color: #333;
+        --green: #4CAF50;
+        --yellow: #FFC107;
+        --red: #F44336;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #fff;
+        --fg-color: #000;
+        --nav-color: #c1c1c1;
+        --green: #4CAF50;
+        --yellow: #FFC107;
+        --red: #F44336;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
     font-family: 'Inter', 'Noto Serif Bengali', sans-serif;
     font-size: 16px;
+}
+main {
+    padding: 1rem;
 }
 
 nav {
@@ -10,7 +44,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #d9d9d9;
+    background-color: var(--nav-color);
+    color: var(--fg-color);
 }
 
 h1 {
@@ -26,14 +61,15 @@ button {
     cursor: pointer;
 }
 
-main {
-    padding: 1rem;
+svg {
+    fill: var(--fg-color);
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+hr {
+    width: 100%;
+    border: none;
+    border-top: 2px solid var(--fg-color);
+    margin: 1rem 0;
 }
 
 .grid {
@@ -71,6 +107,8 @@ main {
 input {
     font-family: inherit;
     font-size: 1.5rem;
+    background-color: var(--nav-color);
+    color: var(--fg-color);
     padding: 0.5rem;
     border: 2px solid #ddd;
     border-radius: 0.5rem;
@@ -97,7 +135,8 @@ input {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: var(--nav-color);
+  color: var(--fg-color);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -105,9 +144,10 @@ input {
 
 /* Style the close button */
 #close-button {
-  background-color: #4CAF50;
+  background-color: var(--green);
   color: #fff;
   border: none;
+  border-radius: 5px;
   padding: 10px 20px;
   margin-top: 10px;
   font-size: 16px;
